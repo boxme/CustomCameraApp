@@ -1,16 +1,43 @@
 package com.desmond.squarecamera;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 
 public class CameraActivity extends AppCompatActivity {
 
     public static final String TAG = CameraActivity.class.getSimpleName();
+
+    /**
+     * A convenient method for starting CameraActivity.
+     *
+     * @param activity    The caller Activity
+     * @param requestCode If >= 0, this code will be returned in
+     *                    onActivityResult() when the activity exits.
+     */
+    public static void startCameraActivityForResult(Activity activity, int requestCode) {
+        if (hasCameraPermission(activity)) {
+            Intent intent = new Intent(activity, CameraActivity.class);
+            activity.startActivityForResult(intent, requestCode);
+        } else {
+            Log.e(TAG, "Camera permission has not been granted!");
+        }
+    }
+
+    private static boolean hasCameraPermission(Context context) {
+        return ActivityCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
