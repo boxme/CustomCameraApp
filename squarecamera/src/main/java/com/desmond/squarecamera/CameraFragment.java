@@ -71,7 +71,7 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback, 
         // in the backstack will cause improper state restoration
         // onCreate() -> onSavedInstanceState() instead of going through onCreateView()
         if (savedInstanceState == null) {
-            mCameraID = getBackCameraID();
+            mCameraID = getActivity().getIntent().getIntExtra(CAMERA_ID_KEY, getBackCameraID());
             mFlashMode = CameraSettingPreferences.getCameraFlashMode(getActivity());
             mImageParameters = new ImageParameters();
         } else {
