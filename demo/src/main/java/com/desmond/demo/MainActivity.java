@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.desmond.squarecamera.CameraActivity;
+import com.desmond.squarecamera.CameraFragment;
 import com.desmond.squarecamera.ImageUtility;
 
 
@@ -89,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void launch() {
         Intent startCustomCameraIntent = new Intent(this, CameraActivity.class);
+        startCustomCameraIntent.putExtra(CameraFragment.CAMERA_ID_KEY, Camera.CameraInfo.CAMERA_FACING_FRONT);
         startActivityForResult(startCustomCameraIntent, REQUEST_CAMERA);
     }
 
