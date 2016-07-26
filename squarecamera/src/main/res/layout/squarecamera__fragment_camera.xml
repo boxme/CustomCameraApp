@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context="com.desmond.squarecamera.CameraFragment">
 
     <com.desmond.squarecamera.SquareCameraPreview
@@ -28,7 +29,6 @@
         android:id="@+id/camera_tools_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/camera_preview_view"
         android:layout_alignParentBottom="true"
         android:padding="10dp"
         android:orientation="horizontal"
