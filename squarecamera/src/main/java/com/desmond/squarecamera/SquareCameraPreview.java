@@ -156,12 +156,16 @@ public class SquareCameraPreview extends SurfaceView {
     }
 
     private void handleZoom(Camera.Parameters params) {
+        if (!params.isZoomSupported()) {
+            return;
+        }
         int zoom = params.getZoom();
         if (mScaleFactor == ZOOM_IN) {
             if (zoom < mMaxZoom) zoom += ZOOM_DELTA;
         } else if (mScaleFactor == ZOOM_OUT) {
             if (zoom > 0) zoom -= ZOOM_DELTA;
         }
+
         params.setZoom(zoom);
         mCamera.setParameters(params);
     }
