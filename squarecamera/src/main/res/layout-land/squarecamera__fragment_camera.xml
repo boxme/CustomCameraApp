@@ -73,7 +73,7 @@
             android:id="@+id/change_camera"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:src="@drawable/squarecamera__camera"
+            android:src="@drawable/squarecamera__camera_unselected"
             android:layout_weight="1"/>
 
 
