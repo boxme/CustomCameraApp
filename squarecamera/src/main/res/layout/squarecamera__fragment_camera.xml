@@ -39,7 +39,7 @@
             android:id="@+id/change_camera"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/squarecamera__camera"
+            android:src="@drawable/squarecamera__camera_drawable"
             android:layout_weight="1"/>
 
         <ImageView
