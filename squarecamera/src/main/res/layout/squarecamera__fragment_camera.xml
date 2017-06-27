@@ -8,6 +8,7 @@
     <com.desmond.squarecamera.SquareCameraPreview
         android:id="@+id/camera_preview_view"
         android:layout_width="match_parent"
+          android:layout_above="@+id/camera_tools_view"                                         
         android:layout_height="wrap_content"/>
 
     <View
@@ -15,12 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/squarecamera__cover_start_height"
         android:layout_alignTop="@id/camera_preview_view"
+          android:visibility="gone"
         android:background="@android:color/black"/>
 
     <View
         android:id="@+id/cover_bottom_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/squarecamera__cover_start_height"
+          android:visibility="gone"
         android:layout_alignBottom="@id/camera_preview_view"
         android:background="@android:color/black"/>
 
@@ -28,7 +31,7 @@
         android:id="@+id/camera_tools_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/camera_preview_view"
+ 
         android:layout_alignParentBottom="true"
         android:padding="10dp"
         android:orientation="horizontal"
